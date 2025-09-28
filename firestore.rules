@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow public read access to all portfolio data
+    match /portfolio/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Allow authenticated access to config collection
+    match /config/{document=**} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow public write access to messages collection for contact form
+    match /messages/{document=**} {
+      allow write: if true;
+      allow read: if request.auth != null;
+    }
+    
+    // Default rule - deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

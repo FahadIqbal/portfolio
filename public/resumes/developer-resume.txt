@@ -1,0 +1,5 @@
+This is a placeholder file for the Developer resume PDF.
+
+Replace this file with an actual PDF resume named 'developer-resume.pdf'.
+
+The Contact component in the application is configured to download this file when users click the 'Download PDF' button for the Developer resume.
