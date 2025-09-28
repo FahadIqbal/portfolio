@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section-container {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 0 !important;
+      margin-bottom: 1rem !important;
+      position: relative !important;
+      z-index: 10 !important;
+      min-height: auto !important;
+      max-height: none !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+    
+    .section-container {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: relative !important;
+      z-index: 5 !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    #hero {
+      max-height: none !important;
+      height: auto !important;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    #hero {
+      height: 90vh !important;
+      max-height: 90vh !important;
+    }
+    
+    /* Minimal gap between section containers */
+    .section-container {
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      display: block; /* Ensure sections are visible */
+    }
+    
+    /* Ensure consistent spacing between all sections */
+    #about, #experience, #projects, #skills, #certifications, #testimonials, #contact {
+      margin-bottom: 0;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    /* Add subtle visual separation between sections */
+    .section-container:not(:last-child) {
+      border-bottom: 1px solid rgba(229, 231, 235, 0.1);
+      position: static;
+    }
+    
+    /* Minimal spacing indicator */
+    .section-container:not(:last-child)::after {
+      content: '';
+      position: relative;
+      display: block;
+      margin: 1rem auto 0;
+      width: 2rem;
+      height: 0.125rem;
+      background: rgba(229, 231, 235, 0.05);
+      border-radius: 0.5rem;
+    }
+    
+    /* Ensure Hero section has enough padding for the header */
+    section:first-of-type {
+      padding-top: 3rem;
+      margin-bottom: 0;
+    }
+    
+    /* Additional padding when mobile menu is open */
+    .menu-open section:first-of-type {
+      padding-top: 24rem;
+    }
+    
+    /* Ensure Hero section has proper spacing */
+    #root > div > div:first-child {
+      margin-bottom: 0;
+    }
+    
+    /* Reduce spacing between section elements */
+    section > div > div {
+      margin-bottom: 1rem;
+    }
+    
+    /* Adjust spacing for stats and cards */
+    .grid {
+      gap: 1rem;
+    }
+    
+    /* Reduce text margins */
+    h2, h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Adjust spacing in featured sections */
+    .mb-12 {
+      margin-bottom: 2rem;
+    }
+    
+    .mb-16 {
+      margin-bottom: 2.5rem;
+    }
+    
+    /* Adjust padding in cards */
+    .p-8 {
+      padding: 1rem;
+    }
+    
+    /* Adjust spacing for mobile timeline */
+    .space-y-8 > div {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Reduce padding in section containers */
+    .section-container section {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --ring: 215 20.2% 65.1%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
