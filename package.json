@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && npm run generate:sitemap",
-    "build:analyze": "vite build --mode analyze",
+    "dev": "node init && vite",
+    "build": "node init && vite build && npm run generate:sitemap",
+    "build:analyze": "node init && vite build --mode analyze",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
