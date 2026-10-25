@@ -53,4 +53,4 @@ export default tseslint.config(
   },
   // Prettier integration (must be last)
   prettierConfig
-);;
+);
